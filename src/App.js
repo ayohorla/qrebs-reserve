@@ -1,24 +1,29 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import { Route, Switch } from 'react-router-dom';
+import Reservation from './pages/Reservation';
+import Menu from './pages/Menu';
+import Location from './pages/Location';
+import Layout from './component/layout/Layout'
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Layout>
+      <br></br>
+      <Switch>
+        <Route path='/' exact>
+          <Login />
+        </Route>
+        <Route path='/Reservation'>
+          <Reservation />
+        </Route>
+        <Route path='/Menu'>
+          <Menu />
+        </Route>
+        <Route path='/Location'>
+          <Location />
+        </Route>
+      </Switch>
+    </Layout>
   );
 }
 
